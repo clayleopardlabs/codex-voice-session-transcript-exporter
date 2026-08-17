@@ -1,6 +1,6 @@
 ---
 name: brainstorming
-description: Prepare an evidence-backed system-reality snapshot for a supplied project and run a decision-tracked architecture brainstorming session. Use when the user invokes brainstorming with a project path such as /brainstorming <path-to-project>.
+description: Prepare an evidence-backed system-reality snapshot for a supplied project and run a decision-tracked architecture brainstorming session. Use when the user invokes brainstorming with a project path.
 ---
 
 # Project brainstorming
