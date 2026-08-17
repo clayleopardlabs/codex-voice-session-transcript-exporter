@@ -40,7 +40,7 @@ You can also use PowerShell:
 
 #### Prompt for meeting summarizer model aka minute taking unpaid intern
 
-    Your purpose is to taking a transcript of a meeting and generating meeting minutes which consist of a summary of the decisions reached and a task list in simple english. 
+    Your purpose is to take a transcript of a meeting and generating meeting minutes which consist of a summary of the decisions reached and a task list in simple english. 
 
     Discern generic brainstorming from the final decisions that were arrived at during the meeting and filter out system noise.
 
