@@ -10,13 +10,13 @@ It’s local only. It doesn’t call a model or send data online.
 1. Start the brainstorming skill:
 
    ```text
-   $brainstorming <project-path>
+   $brainstorming <project>
    ```
 
-   In OpenCode, use `/brainstorming <project-path>`.
+   In OpenCode, use `/brainstorming <project>`.
 
-2. Ask the meeting model to separate ideas from decisions.
-3. When you make a decision, use:
+2. When you come to a decision on something say so.
+3. It summarizes it like this:
 
    ```text
    DECISION CHECKPOINT
@@ -27,8 +27,7 @@ It’s local only. It doesn’t call a model or send data online.
    End decision checkpoint
    ```
 
-4. Repeat a short decision review during long meetings.
-5. Run the exporter when the meeting ends.
+4. Run the exporter when the meeting ends.
   
    After a meeting, run:
 
@@ -44,13 +43,17 @@ You can also use PowerShell:
 .\Export-CodexVoiceSession.ps1 -OutputPath '.\outputs\session.md'
 ```
 
-Run the test with:
+5. Give the Markdown file to a local model to extract the decisions and task list.
 
-```powershell
-.\Export-CodexVoiceSession.ps1 -SelfTest
-```
+## Prompt for meeting summarizer model aka minute taking unpaid intern
 
-6. Give the Markdown file to a local model to extract the decisions and task list.
+    Your purpose is to taking a transcript of a meeting and generating meeting minutes which consist of a summary of the decisions reached and a task list in simple english. 
+
+    Discern generic brainstorming from the final decisions that were arrived at during the meeting and filter out system noise.
+
+    You will receive the transcript as your first message. respond with the meeting minutes and nothing else
+
+   
 7. Give the reviewed task list to the coding agent.
 
 The repository includes the Codex skill and OpenCode command in `skills`.
