@@ -2,9 +2,9 @@
 
 This small Windows tool turns a local Codex Voice session into a Markdown file.
 
-It is local only. It does not call a model or send data to the internet.
+It’s local only. It doesn’t call a model or send your transcript to the internet.
 
-## Use it
+## Export a session
 
 After a Voice meeting, double-click:
 
@@ -12,7 +12,7 @@ After a Voice meeting, double-click:
 Start-CodexVoiceExport.cmd
 ```
 
-The tool finds the newest Codex session, writes a dated Markdown file in `outputs`, and opens it. It never overwrites an older export.
+It’ll find the newest Codex session, write a dated Markdown file in `outputs`, and open it. It won’t overwrite an older export.
 
 You can also run it in PowerShell:
 
@@ -32,10 +32,10 @@ Run the built-in test:
 .\Export-CodexVoiceSession.ps1 -SelfTest
 ```
 
-## Meeting workflow
+## The meeting workflow
 
-1. Start the meeting with a frontier-level model. Ask it to separate brainstorming from decisions.
-2. When you agree on an important point, ask for this checkpoint:
+1. Start a meeting with a frontier-level model. Ask it to separate brainstorming from decisions.
+2. When you agree on an important point, ask for this:
 
    ```text
    DECISION CHECKPOINT
@@ -46,9 +46,47 @@ Run the built-in test:
    End decision checkpoint
    ```
 
-3. Every 20–30 minutes, ask for a short list of confirmed decisions, changed decisions, implementation changes, and open questions. This helps when the meeting is long.
+3. Every 20–30 minutes, ask for a short list of confirmed decisions, changed decisions, implementation changes, and open questions. This’ll help when the meeting gets long.
 4. End the meeting and run the exporter.
-5. Give the Markdown file to a small local model in LM Studio. Ask it to extract the final decisions and implementation checklist. Do not ask it to invent new designs.
-6. Give the reviewed checklist to a smarter coding agent. That agent checks the current project and makes the approved changes.
+5. Give the Markdown file to a small local model in LM Studio. Ask it to extract the final decisions and an implementation checklist. Don’t ask it to invent new designs.
+6. Give the reviewed checklist to a smarter coding agent. It’ll check the current project and make the approved changes.
 
 The frontier model does the hard reasoning. The exporter keeps the record. The local model takes the minutes. The coding agent implements the reviewed result.
+
+## Brainstorming skills
+
+This repository also includes the skills used to prepare a project and start the meeting.
+
+### Codex desktop skill
+
+Copy `skills\codex\brainstorming\SKILL.md` to:
+
+```text
+C:\Users\Omen\.codex\skills\brainstorming\SKILL.md
+```
+
+Then use the skill with the project path:
+
+```text
+$brainstorming B:\Projects\your-project\
+```
+
+### OpenCode command
+
+Copy `skills\opencode\brainstorming.md` to:
+
+```text
+C:\Users\Omen\.config\opencode\commands\brainstorming.md
+```
+
+Then use:
+
+```text
+/brainstorming B:\Projects\your-project\
+```
+
+The skill looks for a `systemreality` folder. If it can’t find one, it creates `docs\systemreality` and writes a dated snapshot named from the current Git commit. The snapshot records the components, files, data flow, active interfaces, dependencies, tests, and verified, proposed, and unknown assumptions.
+
+The skill won’t treat a proposal as a decision. During the meeting, it’ll use the decision checkpoint format above and mark old decisions as superseded when needed.
+
+Private files in `outputs\` aren’t included in the repository.
