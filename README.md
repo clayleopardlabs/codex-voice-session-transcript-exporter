@@ -15,7 +15,9 @@ It’s local only. It doesn’t call a model or send data online.
 
    In OpenCode, use `/brainstorming <project>`.
 
-2. When you come to a decision on something say so.
+   e.g. /brainstorming bigtittygothgirlholigraphicgirlfriend project
+
+3. When you come to a decision on something say so.
 
 4. It summarizes the decision.
 
