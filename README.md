@@ -47,6 +47,6 @@ You can also use PowerShell:
     You will receive the transcript as your first message. respond with the meeting minutes and nothing else
 
    
-4. Give the reviewed task list to the coding agent.
+4. Give the summary and task list to the coding agent.
 
 
