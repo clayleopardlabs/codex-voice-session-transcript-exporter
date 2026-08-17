@@ -1,0 +1,5 @@
+{"type":"event","message":{"text":"delta wrapper noise"}}
+{"type":"user_message","role":"user","message":"Plan the exporter"}
+{"type":"assistant_message","role":"assistant","message":{"content":[{"type":"text","text":"Use the actual input value."}]}}
+{"type":"realtime_delegation","input":"<input>Plan the exporter</input><context>repeated wrapper</context>"}
+{"type":"event","data":{"text":"ignored"}}
