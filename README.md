@@ -34,8 +34,24 @@ Run the built-in test:
 
 ## The meeting workflow
 
-1. Start a meeting with a frontier-level model. Ask it to separate brainstorming from decisions.
-2. When you agree on an important point, ask for this:
+1. Before the meeting, run the brainstorming skill for the project. It creates or reuses the `systemreality` briefing so the frontier model can reason from the current system without rereading the whole project.
+
+   In Codex desktop, use:
+
+   ```text
+   $brainstorming B:\Projects\your-project\
+   ```
+
+   In OpenCode, use:
+
+   ```text
+   /brainstorming B:\Projects\your-project\
+   ```
+
+   The skill checks the project, writes the reality snapshot when needed, and then starts the decision-tracked brainstorming session.
+
+2. Start the meeting with a frontier-level model. Ask it to separate brainstorming from decisions.
+3. When you agree on an important point, ask for this:
 
    ```text
    DECISION CHECKPOINT
@@ -46,10 +62,10 @@ Run the built-in test:
    End decision checkpoint
    ```
 
-3. Every 20–30 minutes, ask for a short list of confirmed decisions, changed decisions, implementation changes, and open questions. This’ll help when the meeting gets long.
-4. End the meeting and run the exporter.
-5. Give the Markdown file to a small local model in LM Studio. Ask it to extract the final decisions and an implementation checklist. Don’t ask it to invent new designs.
-6. Give the reviewed checklist to a smarter coding agent. It’ll check the current project and make the approved changes.
+4. Every 20–30 minutes, ask for a short list of confirmed decisions, changed decisions, implementation changes, and open questions. This’ll help when the meeting gets long.
+5. End the meeting and run the exporter.
+6. Give the Markdown file to a small local model in LM Studio. Ask it to extract the final decisions and an implementation checklist. Don’t ask it to invent new designs.
+7. Give the reviewed checklist to a smarter coding agent. It’ll check the current project and make the approved changes.
 
 The frontier model does the hard reasoning. The exporter keeps the record. The local model takes the minutes. The coding agent implements the reviewed result.
 
