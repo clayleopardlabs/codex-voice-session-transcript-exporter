@@ -104,5 +104,3 @@ Then use:
 The skill looks for a `systemreality` folder. If it can’t find one, it creates `docs\systemreality` and writes a dated snapshot named from the current Git commit. The snapshot records the components, files, data flow, active interfaces, dependencies, tests, and verified, proposed, and unknown assumptions.
 
 The skill won’t treat a proposal as a decision. During the meeting, it’ll use the decision checkpoint format above and mark old decisions as superseded when needed.
-
-Private files in `outputs\` aren’t included in the repository.
