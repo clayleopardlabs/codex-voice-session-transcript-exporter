@@ -23,7 +23,7 @@ You can also run it in PowerShell:
 To export one known session:
 
 ```powershell
-.\Export-CodexVoiceSession.ps1 -SessionPath 'C:\Users\Omen\.codex\sessions\...jsonl' -OutputPath '.\outputs\session.md'
+.\Export-CodexVoiceSession.ps1 -SessionPath "$env:USERPROFILE\.codex\sessions\...jsonl" -OutputPath '.\outputs\session.md'
 ```
 
 Run the built-in test:
@@ -39,13 +39,13 @@ Run the built-in test:
    In Codex desktop, use:
 
    ```text
-   $brainstorming B:\Projects\your-project\
+   $brainstorming <path-to-your-project>
    ```
 
    In OpenCode, use:
 
    ```text
-   /brainstorming B:\Projects\your-project\
+   /brainstorming <path-to-your-project>
    ```
 
    The skill checks the project, writes the reality snapshot when needed, and then starts the decision-tracked brainstorming session.
@@ -78,13 +78,13 @@ This repository also includes the skills used to prepare a project and start the
 Copy `skills\codex\brainstorming\SKILL.md` to:
 
 ```text
-C:\Users\Omen\.codex\skills\brainstorming\SKILL.md
+C:\Users\<you>\.codex\skills\brainstorming\SKILL.md
 ```
 
 Then use the skill with the project path:
 
 ```text
-$brainstorming B:\Projects\your-project\
+$brainstorming <path-to-your-project>
 ```
 
 ### OpenCode command
@@ -92,13 +92,13 @@ $brainstorming B:\Projects\your-project\
 Copy `skills\opencode\brainstorming.md` to:
 
 ```text
-C:\Users\Omen\.config\opencode\commands\brainstorming.md
+C:\Users\<you>\.config\opencode\commands\brainstorming.md
 ```
 
 Then use:
 
 ```text
-/brainstorming B:\Projects\your-project\
+/brainstorming <path-to-your-project>
 ```
 
 The skill looks for a `systemreality` folder. If it can’t find one, it creates `docs\systemreality` and writes a dated snapshot named from the current Git commit. The snapshot records the components, files, data flow, active interfaces, dependencies, tests, and verified, proposed, and unknown assumptions.
