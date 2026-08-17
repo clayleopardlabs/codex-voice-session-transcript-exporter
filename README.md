@@ -16,18 +16,10 @@ It’s local only. It doesn’t call a model or send data online.
    In OpenCode, use `/brainstorming <project>`.
 
 2. When you come to a decision on something say so.
-3. It summarizes it like this:
 
-   ```text
-   DECISION CHECKPOINT
-   Decision:
-   Reason:
-   Implementation changes:
-   Open questions:
-   End decision checkpoint
-   ```
+4. It summarizes the decision.
 
-4. Run the exporter when the meeting ends.
+5. Run the exporter when the meeting ends.
   
    After a meeting, run:
 
