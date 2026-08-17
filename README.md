@@ -50,4 +50,4 @@ You can also use PowerShell:
    
 7. Give the reviewed task list to the coding agent.
 
-The repository includes the Codex skill and OpenCode command in `skills`.
+
